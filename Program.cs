@@ -1,6 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("http://0.0.0.0:4952");
+builder.WebHost.UseUrls("http://0.0.0.0:4962");
 
 builder.Services
     .AddCors(options =>
