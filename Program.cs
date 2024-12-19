@@ -8,7 +8,7 @@ builder.Services
             "TyrSecretRoom",
             policy =>
                 policy
-                    .WithOrigins("https://localhost:7151", "https://localhost:7173")
+                    .WithOrigins("https://localhost:7777")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials()
@@ -31,8 +31,8 @@ app.MapGet("/rooms", async (HttpContext context) =>
     {
         return Results.BadRequest("Invalid 'start' or 'count' query parameter.");
     }
-
-    var repoUri = Environment.GetEnvironmentVariable("REPO_URI") ?? "http://repo:5050";
+    
+    var repoUri = Environment.GetEnvironmentVariable("REPO_URI") ?? "http://repo:4050";
     using var httpClient = new HttpClient
     {
         BaseAddress = new Uri(repoUri)
